@@ -1,22 +1,36 @@
 <!DOCTYPE html>
 <html lang="fr">
-	<head>
-		<meta charset="utf-8">
-		<title>Devine</title>
-		<meta name="description" content="Devine le nombre">
-	</head>
-	<body>
-		<h1>Devine le nombre </h1>
-		<p>Un nombre aléatoire entre 1 et 100 a été choisi. Essaie de le trouver en moins de dix essais.
-			Pour faciliter un peu les choses, nous te dirons à chaque fois si le nombre soumis est plus petit ou plus grand que le
-			nombre choisi.</p>
-		<div>
-			<label for="essai">Le nombre choisi est: </label>
-			<input type="text" id="essai">
-			<button>Soumettre</button>
-		</div>
-		<div class="nombres">
-			<div id="1" class="nombre">001</div>
+
+<head>
+	<meta charset="utf-8">
+	<title>Devine</title>
+	<link rel="stylesheet" href="CSS/style.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="script.js"></script>
+	<meta name="description" content="Devine le nombre">
+</head>
+
+<body>
+	
+	<header>
+		<h1>DEVINE LE NOMBRE BUDDY!!!</h1>
+	</header>
+
+	<p>Un nombre aléatoire entre 1 et 100 a été choisi. Essaie de le trouver en moins de dix essais.
+		Pour faciliter un peu les choses, nous te dirons à chaque fois si le nombre soumis est plus petit ou plus grand
+		que le
+		nombre choisi.</p>
+	<div class="nombreArea">
+		<label for="essai">Le nombre choisi est: </label>
+		<input id="essaiInput" type="text" value="">
+		<button id="guessButton" type="button" onclick="">Soumettre</button>
+		<p id="message"></p>
+		<ul id="previousGuesses"></ul>
+	</div>
+	<div class="nombres">
+
+		<div id="row1">
+			<div id="1" class="nombre" value="1">001</div>
 			<div id="2" class="nombre">002</div>
 			<div id="3" class="nombre">003</div>
 			<div id="4" class="nombre">004</div>
@@ -36,6 +50,9 @@
 			<div id="18" class="nombre">018</div>
 			<div id="19" class="nombre">019</div>
 			<div id="20" class="nombre">020</div>
+		</div>
+
+		<div id="row2">
 			<div id="21" class="nombre">021</div>
 			<div id="22" class="nombre">022</div>
 			<div id="23" class="nombre">023</div>
@@ -56,6 +73,9 @@
 			<div id="38" class="nombre">038</div>
 			<div id="39" class="nombre">039</div>
 			<div id="40" class="nombre">040</div>
+		</div>
+
+		<div id="row3">
 			<div id="41" class="nombre">041</div>
 			<div id="42" class="nombre">042</div>
 			<div id="43" class="nombre">043</div>
@@ -76,6 +96,9 @@
 			<div id="58" class="nombre">058</div>
 			<div id="59" class="nombre">059</div>
 			<div id="60" class="nombre">060</div>
+		</div>
+
+		<div id="row4">
 			<div id="61" class="nombre">061</div>
 			<div id="62" class="nombre">062</div>
 			<div id="63" class="nombre">063</div>
@@ -96,6 +119,9 @@
 			<div id="78" class="nombre">078</div>
 			<div id="79" class="nombre">079</div>
 			<div id="80" class="nombre">080</div>
+		</div>
+
+		<div id="row5">
 			<div id="81" class="nombre">081</div>
 			<div id="82" class="nombre">082</div>
 			<div id="83" class="nombre">083</div>
@@ -117,5 +143,7 @@
 			<div id="99" class="nombre">099</div>
 			<div id="100" class="nombre">100</div>
 		</div>
-	</body>
+
+</body>
+
 </html>
