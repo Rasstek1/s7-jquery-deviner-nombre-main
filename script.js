@@ -1,62 +1,100 @@
-
-
-
-  // generate a random number between 1 and 10
-  var randomNumber = Math.floor(Math.random() * 100) + 1;
-  
-  // get references to the input, button, message, and previousGuesses elements
-  var guessInput = document.getElementById("essaiInput");
-  const essaiButton = document.getElementById("guessButton");
-  var message = document.getElementById("message");
-  var previousGuesses = document.getElementById("previousGuesses");
-
-  // initialize an empty array to store previous guesses
-  var guesses = [];
-
-  // add a click event listener to the button
-  essaiButton.addEventListener("click", function() {
-    const essaiInput = document.getElementById("essai");
-    const essaiValue = essaiInput.value;
-    console.log("Essai: " + essaiValue);
-    
-    // check if the guess is a valid number
-    if (isNaN(guess) || guess < 1 || guess > 100) {
-      message.textContent = "Please enter a valid number.";
-      return;
-    }
-    
-    // check if the guess has already been made
-    if (guesses.includes(guess)) {
-      message.textContent = "You already guessed that number.";
-      return;
-    }
-    
-    // add the guess to the array of previous guesses
-    guesses.push(guess);
-    
-    // remove the guessed number from the list of available numbers
-    var guessedNumber = document.getElementByclass("nombre" + guess);
-    guessedNumber.parentNode.removeChild(guessedNumber);
-
-    // check if the guess is correct
-    if (guess === randomNumber) {
-      message.textContent = "Congratulations! You guessed the number.";
-    } else {
-      var messageText = "Sorry, that's not the number. Guess again.";
-      
-      // check if the guess is higher or lower than the random number
-      if (guess < randomNumber) {
-        messageText += " The number is higher than " + guess + ".";
-      } else {
-        messageText += " The number is lower than " + guess + ".";
-      }
-      
-      message.textContent = messageText;
-      
-      // add the guess to the list of previous guesses
-      var guessItem = document.createElement("li");
-      guessItem.textContent = guess;
-      previousGuesses.appendChild(guessItem);
-    }
+$(document).ready(function() {
+  $('.nombre').each(function() {
+    $(this).click(function() {
+      var guess = $(this).text();
+      $('#essaiInput').val(guess);
+    });
   });
+});
+// Génère un nombre aléatoire entre 1 et 100
+let randomNumber = Math.floor(Math.random() * 100) + 1;
 
+// Initialise les compteurs pour les tentatives et les devinettes précédentes
+let count = 0;
+let previousGuesses = [];
+
+// Définit une fonction pour vérifier si une devinette est correcte
+function checkGuess() {
+  // Obtient la devinette de l'utilisateur à partir de l'input
+  let userGuess = Number(document.getElementById("essaiInput").value);
+  
+  // Vérifie que l'utilisateur a entré un nombre valide entre 1 et 100
+  if (isNaN(userGuess) || userGuess < 1 || userGuess > 100) {
+    alert("Veuillez entrer un nombre entre 1 et 100.");
+    return;
+  }
+  
+  // Incrémente le compteur de tentatives
+  count++;
+  
+  // Ajoute la devinette de l'utilisateur à la liste des devinettes précédentes
+  previousGuesses.push(userGuess + " " );
+  
+  // Met à jour la liste des devinettes précédentes dans le HTML
+  let list = document.getElementById("previousGuesses");
+  let item = document.createElement("li");
+  item.appendChild(document.createTextNode(userGuess));
+  list.appendChild(item);
+  
+  // Vérifie si l'utilisateur a deviné le nombre
+  if (userGuess === randomNumber) {
+    let message = "Bravo! Vous avez deviné le nombre mystère en " + count + " essais.";
+    document.getElementById("message").textContent = message;
+    disableInput();
+  } else if (count === 10) {
+    let message = "Désolé, vous avez épuisé toutes vos tentatives. Le nombre mystère était " + randomNumber + ".";
+    document.getElementById("message").textContent = message;
+    disableInput();
+  } else {
+    let message = userGuess < randomNumber ? "Le nombre mystère est plus grand." : "Le nombre mystère est plus petit.";
+    document.getElementById("message").textContent = message;
+  }
+  
+  // Réinitialise l'input pour la prochaine devinette
+  document.getElementById("essaiInput").value = "";
+
+  // Récupérer le bouton "Recommencer"
+// Ajouter un gestionnaire d'événements pour le clic sur le bouton
+resetButton.addEventListener("click", function() {
+  // Réinitialiser tous les nombres de la grille
+  const gridCells = document.querySelectorAll(".grid-cell");
+  gridCells.forEach(cell => {
+    cell.textContent = "";
+  });
+});
+}
+
+
+
+
+
+// Désactive l'input et le bouton une fois que le jeu est terminé
+function disableInput() {
+  document.getElementById("essaiInput").disabled = true;
+  document.getElementById("guessButton").disabled = true;
+}
+
+// Ajoute des événements click pour chaque nombre de la grille
+let nombres = document.getElementsByClassName("nombre");
+for (let i = 0; i < nombres.length; i++) {
+  nombres[i].addEventListener("click", function() {
+    // Met à jour l'input avec la valeur du nombre cliqué
+    document.getElementById("essaiInput").value = this.textContent;
+    // Soumet la devinette
+    checkGuess();
+  });
+}
+
+
+
+// Récupérer le bouton "Recommencer"
+const resetButton = document.getElementById("resetButton");
+
+// Ajouter un gestionnaire d'événements pour le clic sur le bouton
+resetButton.addEventListener("click", function() {
+  // Réinitialiser tous les nombres de la grille
+  const gridCells = document.querySelectorAll(".grid-cell");
+  gridCells.forEach(cell => {
+    cell.textContent = "";
+  });
+});

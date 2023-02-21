@@ -23,14 +23,16 @@
 	<div class="nombreArea">
 		<label for="essai">Le nombre choisi est: </label>
 		<input id="essaiInput" type="text" value="">
-		<button id="guessButton" type="button" onclick="">Soumettre</button>
+		
+		<button id="guessButton" type="button" onclick="checkGuess() ">Soumettre</button>
+		<button id="resetButton" type="button" value="Rejouer">Rejouer</button>
 		<p id="message"></p>
 		<ul id="previousGuesses"></ul>
 	</div>
 	<div class="nombres">
 
 		<div id="row1">
-			<div id="1" class="nombre" value="1">001</div>
+			<div id="1" class="nombre">001</div>
 			<div id="2" class="nombre">002</div>
 			<div id="3" class="nombre">003</div>
 			<div id="4" class="nombre">004</div>

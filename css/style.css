@@ -10,12 +10,12 @@ body {
     width: 1600px;
     border: 3px solid rgb(232, 89, 242);
     height: 860px;
-    margin:0 auto;
+    margin: 0 auto;
 }
 
 /*Container******************************************************************/
 .container {
-   
+
     width: 1600px;
     margin: auto;
     padding-left: 25px;
@@ -33,7 +33,8 @@ header {
     justify-content: space-between;
     border: 3px solid rgb(232, 89, 242);
 }
-h1{
+
+h1 {
     font-size: 30px;
     color: rgb(167, 167, 234);
     text-align: center;
@@ -45,24 +46,54 @@ h1{
     border: 3px solid rgb(232, 89, 242);
     border-radius: 5px;
     /*background: linear-gradient(black, rgb(167, 167, 234), white);*/
-    color:rgb(78, 226, 142);
+    color: rgb(78, 226, 142);
     background-color: rgb(67, 66, 66);
 }
-h1:hover{
-    background: linear-gradient(white,rgb(232, 89, 242), black);
+
+h1:hover {
+    background: linear-gradient(white, rgb(232, 89, 242), black);
 }
 
 p {
     width: 600px;
+
     border: 3px solid rgb(232, 89, 242);
     margin-top: 10px;
-    color:#000000
-
-
-
+    color: #000000
 }
-body p{
+
+.nombreArea p {
+    width: 600px;
+    height: 25px;
+    padding: 0px;
+    border: 3px solid rgb(232, 89, 242);
+    margin-top: 10px;
+    color: #000000
+}
+
+body p {
     background-color: #ffbe3b;
+}
+
+.nombreArea ul {
+    list-style: none;
+    width: 600px;
+    height: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-top: 10px;
+    padding: 0px;
+    border: 3px solid rgb(232, 89, 242);
+    background-color: rgb(253, 121, 121);
+    color: rgb(0, 0, 0);
+    justify-content:space-evenly;
+   
+}
+
+li {
+    margin: 0px;
+    padding: 0px;
 }
 
 label {
@@ -74,13 +105,13 @@ label {
     margin-right: 10px;
     padding: 0px;
     border: 3px solid rgb(232, 89, 242);
-    border-radius: 5px;
-    background-color: rgb(253, 121, 121);
-    color:rgb(0, 0, 0);
-}
- 
 
-   
+    background-color: rgb(253, 121, 121);
+    color: rgb(0, 0, 0);
+}
+
+
+
 
 
 button {
@@ -93,35 +124,40 @@ button {
     font-size: 15px;
     padding: 0;
 }
-button:hover{
+
+button:hover {
     background: black;
- 
+
 }
-button:active{
+
+button:active {
     background: white;
-    color:rgb(167, 167, 234);
+    color: rgb(167, 167, 234);
 
 }
 
 /*Cube avec les nombres*******************************************************/
-#previousGuesses{
-   padding: 0px;
+#previousGuesses {
+    padding: 0px;
 }
 
-.nombreArea{
-    margin:0px;
+.nombreArea {
+    margin: 0px;
     padding: 0px;
-    padding-top:10px;
+    padding-top: 10px;
 }
-.nombre{
-    margin-top:0;
+
+.nombre {
+    margin-top: 0;
 }
+
 #row1 {
     display: flex;
     align-items: center;
     justify-content: space-between;
     margin: 0px;
     margin-bottom: 1px;
+    padding-top: 0px;
 }
 
 #row1 div {
@@ -134,11 +170,21 @@ div .nombre {
     color: #fdfdfd;
     text-align: center;
 }
-#row1 div:hover, #row2 div:hover, #row3 div:hover, #row4 div:hover, #row5 div:hover {
-    background: linear-gradient(white,rgb(232, 89, 242), black);
+
+#row1 div:hover,
+#row2 div:hover,
+#row3 div:hover,
+#row4 div:hover,
+#row5 div:hover {
+    background: linear-gradient(white, rgb(232, 89, 242), black);
 }
-#row1 div:active, #row2 div:active, #row3 div:active, #row4 div:active, #row5 div:active {
-    background:white;
+
+#row1 div:active,
+#row2 div:active,
+#row3 div:active,
+#row4 div:active,
+#row5 div:active {
+    background: white;
     color: black;
 }
 
@@ -152,7 +198,7 @@ div .nombre {
 
 #row2 div {
     border: 3px solid #000000;
-    background: linear-gradient(black,rgb(232, 89, 242), white)
+    background: linear-gradient(black, rgb(232, 89, 242), white)
 }
 
 #row3 {
@@ -257,9 +303,8 @@ div .nombre {
 /*!
  * Bootstrap v4.5.3 (https://getbootstrap.com/)*/
 
- img{
+img {
     width: 100%;
     height: 100%;
     object-fit: cover;
- }
-    
+}
