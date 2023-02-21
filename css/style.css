@@ -15,33 +15,24 @@ body {
 
 /*Container******************************************************************/
 .container {
-
     width: 1600px;
     margin: auto;
     padding-left: 25px;
     padding-right: 25px;
-
 }
 
 /*Header**********************************************************************/
 header {
-
     color: white;
     padding: 0px;
-    display: flex;
     align-items: center;
     justify-content: space-between;
-    border: 3px solid rgb(232, 89, 242);
 }
 
 h1 {
     font-size: 30px;
     color: rgb(167, 167, 234);
     text-align: center;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    margin-left: 10px;
-    margin-right: 10px;
     padding: 0px;
     border: 3px solid rgb(232, 89, 242);
     border-radius: 5px;
@@ -56,12 +47,15 @@ h1:hover {
 
 p {
     width: 600px;
-
     border: 3px solid rgb(232, 89, 242);
     margin-top: 10px;
     color: #000000
 }
+header p {
 
+}
+
+    
 .nombreArea p {
     width: 600px;
     height: 25px;
@@ -69,10 +63,6 @@ p {
     border: 3px solid rgb(232, 89, 242);
     margin-top: 10px;
     color: #000000
-}
-
-body p {
-    background-color: #ffbe3b;
 }
 
 .nombreArea ul {
@@ -87,8 +77,11 @@ body p {
     border: 3px solid rgb(232, 89, 242);
     background-color: rgb(253, 121, 121);
     color: rgb(0, 0, 0);
-    justify-content:space-evenly;
-   
+    justify-content: space-evenly;
+}
+
+body p {
+    background-color: #ffbe3b;
 }
 
 li {
@@ -99,20 +92,13 @@ li {
 label {
     color: white;
     font-size: 20px;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    margin-left: 10px;
     margin-right: 10px;
     padding: 0px;
     border: 3px solid rgb(232, 89, 242);
-
     background-color: rgb(253, 121, 121);
     color: rgb(0, 0, 0);
+
 }
-
-
-
-
 
 button {
     width: 100px;
@@ -125,15 +111,20 @@ button {
     padding: 0;
 }
 
+#guessButton {
+    margin-left: 10px;
+}
 button:hover {
     background: black;
-
 }
 
 button:active {
     background: white;
     color: rgb(167, 167, 234);
+}
 
+input{
+    width: 173px;
 }
 
 /*Cube avec les nombres*******************************************************/
@@ -240,16 +231,6 @@ div .nombre {
     background: linear-gradient(black, rgb(232, 89, 242), white)
 }
 
-
-
-
-
-
-
-
-
-
-
 .navbar {
     display: flex;
     align-items: center;
@@ -308,3 +289,26 @@ img {
     height: 100%;
     object-fit: cover;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
